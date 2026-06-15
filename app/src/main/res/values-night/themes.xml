@@ -1,0 +1,6 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme forced to Light colors even in Night mode -->
+    <style name="Base.Theme.EcoCycleConnect" parent="Theme.Material3.Light.NoActionBar">
+        <!-- Customize your "dark" theme to look like light theme here. -->
+    </style>
+</resources>
