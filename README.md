@@ -33,11 +33,11 @@ This project was developed as a collaborative group project by the following mem
 
 | Index Number | Name | Role | GitHub Profile |
 | :--- | :--- | :--- | :--- |
-| **ITBNM-2313-0020** | A.B Dasun Niroshana | Mobile Developer / UI Designer | [@Dniroshana](https://github.com/Dniroshana) |
-| **ITBNM-2313-0020** | [Member 2] | Backend Developer | [@username](link) |
-| **[Index 3]** | [Member 3] | QA / Database Admin | [@username](link) |
-| **[Index 4]** | [Member 4] | (Role) | [@username](link) |
-| **[Index 4]** | [Member 4] | (Role) | [@username](link) |
+| **ITBNM-2313-0020** | A.B Dasun Niroshana | Profile Settings & Management  | [@Dniroshana](https://github.com/Dniroshana) |
+| **ITBNM-2313-0030** | L.A.D.H. Hemal | Community Waste Reporting  | [@HansaHH](https://github.com/HansaHH) |
+| **ITBNM-2313-0008** | G.G.T.K. Basnayake | Vehicle Selection & Pickup Scheduling | [@kaushbasnayake](https://github.com/kaushbasnayake) |
+| **ITBNM-2313-0017** | K.H.M.H. Dilakshi | User Authentication & Sign-Up  | [@kushidilakshi-boop](https://github.com/kushidilakshi-boop) |
+| **ITBNM-2313-0086** | K.W.K.M. Wijerathna | Eco-Diary Logs | [@kalpaniwasana99-cmyk](https://github.com/kalpaniwasana99-cmyk) |
 
 ## 🚀 Getting Started
 
