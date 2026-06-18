@@ -47,4 +47,4 @@ This project was developed as a collaborative group project by the following mem
 ### Installation Steps
 1. Clone the repository:
 ```bash
-   git clone [https://github.com/your-username/ecocycle-connect.git](https://github.com/your-username/ecocycle-connect.git)<img width="1920" height="1080" alt="Cover" src="https://github.com/user-attachments/assets/5a9a0344-460b-4df8-b0a3-facde3f1bced" />
+   https://github.com/Dniroshana/EcoCycle.git
