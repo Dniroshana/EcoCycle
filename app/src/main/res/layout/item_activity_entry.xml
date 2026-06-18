@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp"
+    app:cardBackgroundColor="#FFFFFF"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="1dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:padding="16dp">
+
+        <ImageView
+            android:id="@+id/iv_type_icon"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_rounded"
+            android:backgroundTint="#F0F9F4"
+            android:padding="12dp"
+            android:src="@drawable/ic_icon"
+            app:tint="#0E9E6D" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_waste_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Waste Type"
+                android:textColor="#171D18"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tv_date_location"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Date • Location"
+                android:textColor="#3E4A3F"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="end"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_points"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="+0 pts"
+                android:textColor="#0E9E6D"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_entry_photo"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="4dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/camera"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.SmallComponent" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
