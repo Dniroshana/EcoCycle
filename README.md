@@ -33,7 +33,7 @@ This project was developed as a collaborative group project by the following mem
 
 | Index Number | Name | Role | GitHub Profile |
 | :--- | :--- | :--- | :--- |
-| **ITBNM-2313-0020** | A.B Dasun Niroshana | Mobile Developer / UI Designer | [@username](link) |
+| **ITBNM-2313-0020** | A.B Dasun Niroshana | Mobile Developer / UI Designer | [@Dniroshana](https://github.com/Dniroshana) |
 | **ITBNM-2313-0020** | [Member 2] | Backend Developer | [@username](link) |
 | **[Index 3]** | [Member 3] | QA / Database Admin | [@username](link) |
 | **[Index 4]** | [Member 4] | (Role) | [@username](link) |
