@@ -37,6 +37,7 @@ This project was developed as a collaborative group project by the following mem
 | **ITBNM-2313-0020** | [Member 2] | Backend Developer | [@username](link) |
 | **[Index 3]** | [Member 3] | QA / Database Admin | [@username](link) |
 | **[Index 4]** | [Member 4] | (Role) | [@username](link) |
+| **[Index 4]** | [Member 4] | (Role) | [@username](link) |
 
 ## 🚀 Getting Started
 
