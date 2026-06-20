@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFFFF">
+
+    <!-- Header Container -->
+    <LinearLayout
+        android:id="@+id/header___top_appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="56dp"
+        android:background="#FFF5FBF2"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Button (Back) -->
+        <LinearLayout
+            android:id="@+id/btn_back"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/left"
+                app:tint="#000000" />
+        </LinearLayout>
+
+        <!-- Title (Centered) -->
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Report Waste"
+            android:textSize="24sp"
+            android:textColor="#0E9E6D"
+            android:gravity="center"
+            android:textStyle="bold"
+            android:fontFamily="sans-serif-medium" />
+
+        <!-- Balanced space to keep title centered -->
+        <View
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp" />
+
+    </LinearLayout>
+
+    <!-- Main Content in ScrollView -->
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nested_scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header___top_appbar"
+        app:layout_constraintBottom_toTopOf="@id/bottomnavbar">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <!-- Photo Upload Section -->
+            <LinearLayout
+                android:id="@+id/btn_photo_upload"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="#F0F9F4"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="30dp">
+
+                <ImageView
+                    android:id="@+id/iv_selected_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:scaleType="centerInside"
+                    android:src="@drawable/camera"
+                    app:tint="#0E9E6D" />
+
+                <TextView
+                    android:id="@+id/tv_take_photo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Take a Photo"
+                    android:textColor="#FF006A39"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="or select from gallery"
+                    android:textColor="#FF3E4A3F"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- Location Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="LOCATION"
+                android:textColor="#FF3E4A3F"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <!-- Map Container -->
+            <org.osmdroid.views.MapView
+                android:id="@+id/mapview"
+                android:layout_width="match_parent"
+                android:layout_height="192dp"
+                android:layout_marginTop="8dp" />
+
+            <LinearLayout
+                android:id="@+id/btn_select_location"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="#F0F9F4"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="20dp">
+
+                <TextView
+                    android:id="@+id/tv_location"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Select location on map"
+                    android:textColor="#FF171D18"
+                    android:textSize="16sp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/maps45"
+                    app:tint="#0E9E6D" />
+            </LinearLayout>
+
+            <!-- Waste Details Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="WASTE DETAILS"
+                android:textColor="#FF3E4A3F"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="Type of Waste"
+                android:textColor="#FF3E4A3F"
+                android:textSize="16sp" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/cg_waste_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                app:singleSelection="true">
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Plastic"
+                    android:textColor="@color/chip_text_selector"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Organic"
+                    android:textColor="@color/chip_text_selector"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Glass"
+                    android:textColor="@color/chip_text_selector"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Paper"
+                    android:textColor="@color/chip_text_selector"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Electronic"
+                    android:textColor="@color/chip_text_selector"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:chipStrokeWidth="0dp" />
+
+                <com.google.android.material.chip.Chip
+                    style="@style/Widget.Material3.Chip.Suggestion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checkable="true"
+                    android:text="Other"
+                    android:textColor="@color/chip_text_selector"
+                    app:chipBackgroundColor="@color/chip_bg_selector"
+                    app:chipStrokeWidth="0dp" />
+            </com.google.android.material.chip.ChipGroup>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Estimated Quantity"
+                android:textColor="#FF3E4A3F"
+                android:textSize="16sp" />
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:columnCount="2">
+
+                <LinearLayout
+                    android:id="@+id/btn_qty_small"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_rounded"
+                    android:backgroundTint="@color/quantity_bg_selector"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/shoppingbag"
+                        android:duplicateParentState="true"
+                        app:tint="@color/quantity_text_selector"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Small Bag"
+                        android:layout_marginStart="8dp"
+                        android:duplicateParentState="true"
+                        android:textColor="@color/quantity_text_selector"
+                        android:textStyle="bold"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_qty_large"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_rounded"
+                    android:backgroundTint="@color/quantity_bg_selector"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/largebag"
+                        android:duplicateParentState="true"
+                        app:tint="@color/quantity_text_selector"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Large Bag"
+                        android:layout_marginStart="8dp"
+                        android:duplicateParentState="true"
+                        android:textColor="@color/quantity_text_selector"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_qty_multiple"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_rounded"
+                    android:backgroundTint="@color/quantity_bg_selector"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/shoppingbag2"
+                        android:duplicateParentState="true"
+                        app:tint="@color/quantity_text_selector"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Multiple Bags"
+                        android:layout_marginStart="8dp"
+                        android:duplicateParentState="true"
+                        android:textColor="@color/quantity_text_selector"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/btn_qty_pile"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_columnWeight="1"
+                    android:layout_margin="4dp"
+                    android:background="@drawable/bg_rounded"
+                    android:backgroundTint="@color/quantity_bg_selector"
+                    android:gravity="center"
+                    android:orientation="horizontal"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="16dp">
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/garbagebag"
+                        android:duplicateParentState="true"
+                        app:tint="@color/quantity_text_selector"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Large Pile"
+                        android:layout_marginStart="8dp"
+                        android:duplicateParentState="true"
+                        android:textColor="@color/quantity_text_selector"/>
+                </LinearLayout>
+            </GridLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Additional Details"
+                android:textColor="#FF3E4A3F"
+                android:textSize="16sp" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_rounded"
+                android:backgroundTint="#F9FAFB"
+                android:gravity="top"
+                android:hint="Enter additional details here..."
+                android:padding="16dp"
+                android:textSize="14sp" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_submit"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginTop="32dp"
+                android:backgroundTint="#0E9E6D"
+                android:text="Submit Report"
+                android:textAllCaps="false"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                app:cornerRadius="12dp"
+                app:icon="@drawable/ic_arrow_right"
+                app:iconGravity="textEnd" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation Bar -->
+    <LinearLayout
+        android:id="@+id/bottomnavbar"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#FFF5FBF2"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <LinearLayout
+            android:id="@+id/btn_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_home" app:tint="#FF3E4A3F" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Home" android:textColor="#FF3E4A3F" android:textSize="12sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center">
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_pill"
+                android:backgroundTint="#0E9E6D"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:paddingHorizontal="24dp">
+                <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_map" app:tint="#FFFFFF" />
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Report" android:textColor="#FFFFFF" android:textSize="12sp" android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_activity"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_activity" app:tint="#FF3E4A3F" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Activity" android:textColor="#FF3E4A3F" android:textSize="12sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btn_profile"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:clickable="true"
+            android:focusable="true"
+            android:orientation="vertical">
+            <ImageView android:layout_width="24dp" android:layout_height="24dp" android:src="@drawable/ic_profile" app:tint="#FF3E4A3F" />
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Profile" android:textColor="#FF3E4A3F" android:textSize="12sp" android:textStyle="bold" />
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
